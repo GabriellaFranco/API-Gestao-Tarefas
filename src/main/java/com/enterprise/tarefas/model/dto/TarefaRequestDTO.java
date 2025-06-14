@@ -12,15 +12,14 @@ import java.time.LocalDate;
 public record TarefaRequestDTO(
 
         @NotNull @NotEmpty
-        @Size(max = 50)
+        @Size(max = 50, message = "O título deve ter no máximo 50 caracteres")
         String titulo,
 
         @NotNull @NotEmpty
-        @Size(max = 150)
         String descricao,
 
         @NotNull
-        @Future
+        @Future(message = "A data de vencimento deve ser futura")
         LocalDate dataVencimento,
 
         @NotNull

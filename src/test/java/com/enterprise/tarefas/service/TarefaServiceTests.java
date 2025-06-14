@@ -1,4 +1,4 @@
-package com.enterprise.tarefas;
+package com.enterprise.tarefas.service;
 
 import com.enterprise.tarefas.enums.Situacao;
 import com.enterprise.tarefas.exception.ResourceNotFoundException;
@@ -8,20 +8,19 @@ import com.enterprise.tarefas.model.dto.TarefaUpdateDTO;
 import com.enterprise.tarefas.model.entity.Tarefa;
 import com.enterprise.tarefas.model.mapper.TarefaMapper;
 import com.enterprise.tarefas.repository.TarefaRepository;
-import com.enterprise.tarefas.service.TarefaService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.test.context.TestPropertySource;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
