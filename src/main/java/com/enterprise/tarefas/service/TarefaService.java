@@ -49,4 +49,5 @@ public class TarefaService {
                 .orElseThrow(() -> new ResourceNotFoundException("Tarefa não encontrada: " + idTarefa));
         tarefaRepository.delete(tarefa);
     }
+
 }
