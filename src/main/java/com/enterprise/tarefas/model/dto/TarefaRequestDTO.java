@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Builder;
 
 import java.time.LocalDate;
+
 @Builder
 public record TarefaRequestDTO(
 
@@ -16,6 +17,7 @@ public record TarefaRequestDTO(
         String titulo,
 
         @NotNull @NotEmpty
+        @Size(max = 250, message = "A descrição deve ter no máximo 250 caracteres")
         String descricao,
 
         @NotNull

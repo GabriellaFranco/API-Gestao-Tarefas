@@ -159,7 +159,7 @@ public class TarefaControllerTests {
                 .build();
 
         when(tarefaService.updateTarefa(eq(1L), Mockito.any())).thenReturn(tarefaAtualizada);
-        mockMvc.perform(put("/tarefas/update-tarefa/1")
+        mockMvc.perform(put("/tarefas/1")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(tarefaAtualizada)))
                 .andExpect(status().isOk())
@@ -168,7 +168,7 @@ public class TarefaControllerTests {
 
     @Test
     void testTarefaController_QuandoChamarDeleteTarefa_DeveRetornar200() throws Exception {
-        mockMvc.perform(delete("/tarefas/delete-tarefa/1"))
+        mockMvc.perform(delete("/tarefas/1"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Tarefa deletada com sucesso")));
     }
