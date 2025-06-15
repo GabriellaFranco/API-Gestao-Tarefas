@@ -1,12 +1,15 @@
 package com.enterprise.tarefas.exception;
 
+import lombok.Getter;
 import lombok.Setter;
 
-@Setter
+import java.time.LocalDateTime;
+
+@Setter @Getter
 public class ErrorResponse {
 
     int status;
     String message;
-    String timestamp;
+    LocalDateTime timestamp;
 
 }
