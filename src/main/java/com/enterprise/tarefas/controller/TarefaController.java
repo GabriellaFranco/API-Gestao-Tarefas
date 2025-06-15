@@ -56,7 +56,7 @@ public class TarefaController {
                     @ApiResponse(responseCode = "400", description = "Informações inválidas"),
             }
     )
-    @PutMapping("/update-tarefa/{tarefaId}")
+    @PutMapping("/{tarefaId}")
     public ResponseEntity<TarefaResponseDTO> updateTarefa(@PathVariable Long tarefaId, @Valid @RequestBody TarefaUpdateDTO tarefaUpdate) {
         var tarefaAtualizada = tarefaService.updateTarefa(tarefaId, tarefaUpdate);
         return ResponseEntity.ok(tarefaAtualizada);
@@ -69,7 +69,7 @@ public class TarefaController {
                     @ApiResponse(responseCode = "404", description = "Tarefa não encontrada"),
             }
     )
-    @DeleteMapping("/delete-tarefa/{tarefaId}")
+    @DeleteMapping("/{tarefaId}")
     public ResponseEntity<String> deleteTarefa(@PathVariable Long tarefaId) {
         tarefaService.deleteTarefa(tarefaId);
         return ResponseEntity.ok("Tarefa deletada com sucesso: " + tarefaId);
