@@ -17,6 +17,7 @@ public class TarefaMapper {
                 .titulo(tarefa.getTitulo())
                 .situacao(tarefa.getSituacao())
                 .dataVencimento(tarefa.getDataEntrega())
+                .responsavel(tarefa.getResponsavel())
                 .build();
     }
 
