@@ -6,7 +6,7 @@ import com.enterprise.tarefas.model.dto.TarefaRequestDTO;
 import com.enterprise.tarefas.model.dto.TarefaResponseDTO;
 import com.enterprise.tarefas.model.dto.TarefaUpdateDTO;
 import com.enterprise.tarefas.model.entity.Tarefa;
-import com.enterprise.tarefas.model.mapper.TarefaMapper;
+import com.enterprise.tarefas.mapper.TarefaMapper;
 import com.enterprise.tarefas.repository.TarefaRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +14,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.test.context.TestPropertySource;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -69,7 +68,7 @@ public class TarefaServiceTests {
                 .id(1L)
                 .titulo("Alimentar o gato")
                 .descricao("Encher a tigela de comida do Javinha")
-                .dataVencimento(LocalDate.now())
+                .dataEntrega(LocalDate.now())
                 .situacao(Situacao.EM_ANDAMENTO)
                 .build();
     }
