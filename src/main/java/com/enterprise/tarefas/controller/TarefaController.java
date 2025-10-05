@@ -36,6 +36,18 @@ public class TarefaController {
     }
 
     @Operation(
+            summary = "Retorna uma tarefa com o id informado",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "Sucesso"),
+                    @ApiResponse(responseCode = "404", description = "Tarefa não encontrada")
+            }
+    )
+    @GetMapping("/{id}")
+    public ResponseEntity<TarefaResponseDTO> getTarefaById(@PathVariable Long id) {
+        return ResponseEntity.ok(tarefaService.getTarefaById(id));
+    }
+
+    @Operation(
             summary = "Cria uma nova tarefa",
             responses = {
                     @ApiResponse(responseCode = "201", description = "Sucesso"),

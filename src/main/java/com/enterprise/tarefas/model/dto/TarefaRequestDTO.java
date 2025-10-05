@@ -1,10 +1,7 @@
 package com.enterprise.tarefas.model.dto;
 
 import com.enterprise.tarefas.enums.Situacao;
-import jakarta.validation.constraints.Future;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.Builder;
 
 import java.time.LocalDate;
@@ -12,11 +9,11 @@ import java.time.LocalDate;
 @Builder
 public record TarefaRequestDTO(
 
-        @NotNull @NotEmpty
+        @NotBlank
         @Size(max = 50, message = "O título deve ter no máximo 50 caracteres")
         String titulo,
 
-        @NotNull @NotEmpty
+       @NotBlank
         @Size(max = 250, message = "A descrição deve ter no máximo 250 caracteres")
         String descricao,
 
@@ -25,6 +22,11 @@ public record TarefaRequestDTO(
         LocalDate dataVencimento,
 
         @NotNull
-        Situacao situacao
+        Situacao situacao,
+
+        @NotBlank
+        @Size(max = 50, message = "O nome do responsável deve ter no máximo 50 caracteres")
+        String repsonsavel
+
 ) {
 }

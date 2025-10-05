@@ -16,10 +16,11 @@ public class Tarefa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String titulo;
-    String descricao;
-    LocalDate dataVencimento;
+    private Long id;
+    private String titulo;
+    private String descricao;
+    private LocalDate dataEntrega;
+    private String responsavel;
 
     @Enumerated(EnumType.STRING)
     Situacao situacao;
