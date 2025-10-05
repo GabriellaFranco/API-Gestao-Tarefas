@@ -26,7 +26,7 @@ public record TarefaRequestDTO(
 
         @NotBlank
         @Size(max = 50, message = "O nome do responsável deve ter no máximo 50 caracteres")
-        String repsonsavel
+        String responsavel
 
 ) {
 }
