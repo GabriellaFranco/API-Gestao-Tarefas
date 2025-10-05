@@ -26,6 +26,7 @@ public class TarefaMapper {
                 .descricao(tarefaDTO.descricao())
                 .situacao(tarefaDTO.situacao())
                 .dataEntrega(tarefaDTO.dataVencimento())
+                .responsavel(tarefaDTO.responsavel())
                 .build();
     }
 

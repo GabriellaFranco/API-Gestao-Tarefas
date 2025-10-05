@@ -10,5 +10,6 @@ public record TarefaResponseDTO (
         Long id,
         String titulo,
         LocalDate dataVencimento,
-        Situacao situacao
+        Situacao situacao,
+        String responsavel
 ){}
